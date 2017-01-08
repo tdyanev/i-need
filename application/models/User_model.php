@@ -8,12 +8,13 @@ class User_model extends CI_Model {
     public function __construct() {
         parent::__construct();
 
-        $this->table = $this->config->item('table_user');
+        $this->table = $this->config->item('in_table_user');
         $this->load->helper('pass_helper');
     }
 
     public function register($data)
     {
+        //TODO
         print_r($data);
 
         //return $this->db->insert($this->table, $data);

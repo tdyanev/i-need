@@ -3,7 +3,7 @@
 
 <?php echo form_open('register/send'); ?>
 
-<h5>Username</h5>
+<h5>{in_user_label}</h5>
 <input type="text" name="username" value="<?php echo set_value('username'); ?>" />
 
 <h5>Password</h5>

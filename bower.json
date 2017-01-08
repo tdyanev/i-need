@@ -1,0 +1,24 @@
+{
+  "name": "i-need",
+  "authors": [
+    "Silvena Miteva",
+    "Teodora Vasileva",
+    "Plamen Markov",
+    "Tihomir Yanev <tdyanev@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}

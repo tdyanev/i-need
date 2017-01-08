@@ -1,5 +1,4 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-$config['table_user'] = 'ci_users';
-
+$lang['in_user_label'] = 'Потребителско име';

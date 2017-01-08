@@ -6,22 +6,19 @@ class Register extends CI_Controller {
     public function __construct() {
         parent::__construct();
 
-        $this->load->helper(['form', 'url']);
-        $this->load->library(['form_validation', 'in_parser']);
+        $this->load->library(['form_validation']);
 
         $this->load->model('user_model');
-
-        $this->in_parser->set_default_data([
-            'title' => 'Some title',
-        ])
-        ->set_path('base');
     }
 
     public function index() {
-        $this->in_parser->parse('content', 'forms/register', [
 
-        ])->render();
+        $this->parser->parse($this->config->item('in_base_tmp'), [
+            'content' => $this->parser->prepare('forms/register', [
+                'in_user_label',
+            ]),
 
+        ]);
     }
 
     public function send() {
