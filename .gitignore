@@ -7,9 +7,10 @@
 /.project
 /.settings
 /cache.properties
-/build
+/build/
 /vendor/
+/node_modules/
 /composer.phar
 /application/logs/
 /application/config/database.php
-/public/vendor
+/public/vendor/
