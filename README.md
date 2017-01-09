@@ -1,16 +1,12 @@
-# CodeIgniter Composer Installer
-
-[![Latest Stable Version](https://poser.pugx.org/kenjis/codeigniter-composer-installer/v/stable)](https://packagist.org/packages/kenjis/codeigniter-composer-installer) [![Total Downloads](https://poser.pugx.org/kenjis/codeigniter-composer-installer/downloads)](https://packagist.org/packages/kenjis/codeigniter-composer-installer) [![Latest Unstable Version](https://poser.pugx.org/kenjis/codeigniter-composer-installer/v/unstable)](https://packagist.org/packages/kenjis/codeigniter-composer-installer) [![License](https://poser.pugx.org/kenjis/codeigniter-composer-installer/license)](https://packagist.org/packages/kenjis/codeigniter-composer-installer)
-
-This package installs the offical [CodeIgniter](https://github.com/bcit-ci/CodeIgniter) (version `3.1.*`) with secure folder structure via Composer.
-
-You can update CodeIgniter system folder to latest version with one command.
+# I-need
 
 ## Folder Structure
 
 ```
 codeigniter/
 ├── application/
+├── bin/
+├── e2e/
 ├── composer.json
 ├── composer.lock
 ├── public/
@@ -24,35 +20,24 @@ codeigniter/
 
 ## Requirements
 
-* PHP 5.3.7 or later
+* PHP 7.0.0 or later
 * `composer` command (See [Composer Installation](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx))
 * Git
+* npm
+* grunt (See [Grunt Installation](http://gruntjs.com/getting-started))
+* bower
 
 ## How to Use
 
-### Install CodeIgniter
+### Install Packages
 
 ```
-$ composer create-project kenjis/codeigniter-composer-installer codeigniter
+composer install
+npm install
+bower install
 ```
 
-Above command installs `public/.htaccess` to remove `index.php` in your URL. If you don't need it, please remove it.
-
-And it changes `application/config/config.php`:
-
-~~~
-$config['composer_autoload'] = FALSE;
-↓
-$config['composer_autoload'] = realpath(APPPATH . '../vendor/autoload.php');
-~~~
-
-~~~
-$config['index_page'] = 'index.php';
-↓
-$config['index_page'] = '';
-~~~
-
-#### Install Translations for System Messages
+### Install Translations for System Messages
 
 If you want to install translations for system messages:
 
@@ -61,7 +46,7 @@ $ cd /path/to/codeigniter
 $ php bin/install.php translations 3.1.0
 ```
 
-#### Install Third Party Libraries
+### Install Third Party Libraries
 
 [Codeigniter Matches CLI](https://github.com/avenirer/codeigniter-matches-cli):
 
@@ -99,20 +84,24 @@ $ php bin/install.php filename-checker master
 $ php bin/install.php restserver 2.7.2
 ```
 
-### Run PHP built-in server (PHP 5.4 or later)
+### Run PHP built-in server
 
 ```
-$ bin/server.sh
+$ grunt shell:server
 ```
 
-### Update CodeIgniter
+### Run Automated Tests
 
 ```
-$ cd /path/to/codeigniter
-$ composer update
-```
+# Unit Tests
+$ grunt shell:unitTest
 
-You must update files manually if files in `application` folder or `index.php` change. Check [CodeIgniter User Guide](http://www.codeigniter.com/user_guide/installation/upgrading.html).
+# End-to-end Tests
+$ grunt casperjs
+
+# Both
+$ grunt test
+```
 
 ## Reference
 
