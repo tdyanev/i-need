@@ -18,7 +18,11 @@ module.exports = function(grunt) {
           '../../vendor/phpunit/phpunit/phpunit',
           'cd ../../',
         ].join(' && '),
-      }
+      },
+
+      server: {
+        command: 'php -S 127.0.0.1:<%= pkg.config.port %> -t public/ bin/router.php',
+      },
 
     }
 

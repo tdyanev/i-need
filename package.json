@@ -12,6 +12,10 @@
   "bugs": {
     "url": "https://github.com/tdyanev/i-need/issues"
   },
+  "config": {
+    "port": 8000
+  },
+  "private": true,
   "homepage": "https://github.com/tdyanev/i-need#readme",
   "devDependencies": {
     "grunt": "^1.0.1",
