@@ -1,0 +1,19 @@
+{
+  "name": "i-need",
+  "version": "0.0.1",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "test": "sh bin/test.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tdyanev/i-need.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tdyanev/i-need/issues"
+  },
+  "homepage": "https://github.com/tdyanev/i-need#readme"
+}
