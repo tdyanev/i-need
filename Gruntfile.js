@@ -51,6 +51,10 @@ module.exports = function(grunt) {
   // TODO
   grunt.registerTask('build', []);
 
+  grunt.registerTask('server', [
+    'shell:server',
+  ]);
+
   grunt.registerTask('test', [
     'casperjs',
     'shell:unitTest',
