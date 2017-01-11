@@ -18,23 +18,14 @@
 
 <body>
 
-{header}
+<div class="container">
+{header_goes_here}
+</div>
 
 {content}
 
 
-<div class="row">
-  <div class="col-md-4">.col-md-4</div>
-  <div class="col-md-4 col-md-offset-4">.col-md-4 .col-md-offset-4</div>
-</div>
-<div class="row">
-  <div class="col-md-3 col-md-offset-3">.col-md-3 .col-md-offset-3</div>
-  <div class="col-md-3 col-md-offset-3">.col-md-3 .col-md-offset-3</div>
-</div>
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">.col-md-6 .col-md-offset-3</div>
-</div>
 
-
+<script src="//localhost:35729/livereload.js"></script>
 </body>
 </html>

@@ -7,13 +7,29 @@ class IN_Parser extends CI_Parser {
         parent::__construct();
     }
 
-    public function prepare($template, $_data) {
+    public function prepare($template, $_data = [], $find_vars = false) {
         $data = [];
 
         $this->CI->lang->load($template, $this->_lang_idiom());
 
+        if ($find_vars) {
+            $html = $this->parse($template, $data, TRUE);
+
+            preg_match_all(
+                '#'.preg_quote($this->l_delim).'(.+?)'.preg_quote($this->r_delim).'#s',
+                $html,
+                $matches,
+                PREG_SET_ORDER
+            );
+
+            $_data = array_map(function($elem) {
+                return $elem[1];
+            }, $matches);
+        }
+
         foreach ($_data as $value) {
-            $data[$value] = $this->CI->lang->line($value);
+            $v = $this->CI->lang->line($value);
+            $data[$value] = $v ? $v : $value;
         }
 
         return $this->parse($template, $data, TRUE);

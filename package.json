@@ -20,6 +20,7 @@
   "devDependencies": {
     "grunt": "^1.0.1",
     "grunt-casperjs": "^2.2.1",
+    "grunt-contrib-watch": "^1.0.0",
     "grunt-shell": "^2.1.0"
   }
 }
