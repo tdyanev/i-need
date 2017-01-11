@@ -24,6 +24,20 @@ module.exports = function(grunt) {
         command: 'php -S 127.0.0.1:<%= pkg.config.port %> -t public/ bin/router.php',
       },
 
+    },
+
+    watch: {
+      options: {
+        livereload: true,
+        spawn: false,
+        interrupt: true,
+      },
+      views: {
+        files: 'application/views/**/*.php',
+      },
+      css: {
+        files: 'public/**/*.css',
+      },
     }
 
     /*
@@ -45,11 +59,20 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-casperjs');
   grunt.loadNpmTasks('grunt-shell');
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  
+
+
+
+  // command aliases
+
 
   grunt.registerTask('default', []);
 
   // TODO
   grunt.registerTask('build', []);
+
+
 
   grunt.registerTask('server', [
     'shell:server',

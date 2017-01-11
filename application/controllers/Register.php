@@ -14,15 +14,12 @@ class Register extends CI_Controller {
     public function index() {
 
         $this->parser->parse($this->config->item('in_base_tmp'), [
-            'content' => $this->parser->prepare('forms/register', [
-                'in_user_label',
-            ]),
-
+            'content' => $this->parser->prepare('register/index', [], true),
         ]);
     }
 
     public function send() {
-        $table = $this->config->item('table_user');
+        $table = $this->config->item('in_table_user');
 
         $this->form_validation->set_rules(
             'username', 'Username',
