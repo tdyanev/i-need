@@ -20,6 +20,11 @@
 
 <div class="container">
 {header_goes_here}
+
+<a href="<?php echo site_url(); ?>language/set/english">english</a>
+<a href="<?php echo site_url(); ?>language/set/spanish">spanish</a>
+<a href="<?php echo site_url(); ?>language/set/bulgarian">bulgarian</a>
+
 </div>
 
 {content}
