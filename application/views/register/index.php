@@ -55,7 +55,7 @@ if ($validation_errors) : ?>
 
 <div class="form-group">
     <div class="col-sm-offset-3 col-sm-10">
-        <input class="btn btn-default" type="submit" value="{label_submit}" />
+        <input id="submit" class="btn btn-default" type="submit" value="{label_submit}" />
     </div>
 </div>
 

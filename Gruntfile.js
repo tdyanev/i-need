@@ -30,7 +30,6 @@ module.exports = function(grunt) {
       options: {
         livereload: true,
         spawn: false,
-        interrupt: true,
       },
       views: {
         files: 'application/views/**/*.php',
@@ -38,6 +37,20 @@ module.exports = function(grunt) {
       css: {
         files: 'public/**/*.css',
       },
+      e2e: {
+        files: 'e2e/**/*.js',
+        tasks: [
+          'casperjs',
+        ],
+      },
+
+      unit: {
+        files: 'application/tests/**/*.php',
+        tasks: [
+          'shell:unitTest',
+        ],
+      },
+
     }
 
     /*
@@ -60,7 +73,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-casperjs');
   grunt.loadNpmTasks('grunt-shell');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  
 
 
 
